@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-  <meta charset="ISO-8859-1" >
-  <title>Absatz und Zeilenumbruch</title>
- </head>
-<body>
-<!--	HTML			XHTML			Elementname		Erläuterung
+	<head>
+		<meta charset="ISO-8859-1" >
+		<title>Absatz und Zeilenumbruch</title>
+	</head>
+	<body>
+<!--	
+		HTML			XHTML			Elementname		Erläuterung
 		<p> ... </p> 	<p> ... </p>	(paragraph) 	umfasst einen Absatz
 		<br>			<br />			(line break) 	erzeugt einen Zeilenumbruch
 		<hr>			<hr />			(horizontal rule)	erzeugt eine Trennlinie
@@ -14,16 +14,19 @@
 		Named Entity (benannte Entität)
 		&shy;							(soft hyphen)	ermöglicht einen bedingten Trennstrich
 -->
-	<>Dieser Text               steht in einem Absatz<>
-	und wird gerade 
-	umgebrochen! Oder etwa nicht?</>
-	<>Hier beginnt ein neuer Absatz. Zwischen dem Absatz davor und diesem ist 
-ein ge ___ wisser Abstand.</>
-	<>
-	<>Nach einer kleinen Trennlinie folgt noch ein Absatz mit einem sehr langen Wort:
-	Donaudampfschifffahrtsgesellschaftskapitänsm<>ütze</>
-
-</body>
-
-
+		<p>
+			Dieser Text               steht in einem Absatz<br>
+			und wird gerade 
+			umgebrochen! Oder etwa nicht?
+		</p>
+		<p>
+			Hier beginnt ein neuer Absatz. Zwischen dem Absatz davor und diesem ist 
+			ein ge&shy;wisser Abstand.
+		</p>
+		<hr>
+		<div>
+			Nach einer kleinen Trennlinie folgt noch ein Absatz mit einem sehr langen Wort:
+			Donaudampfschifffahrtsgesellschaftskapitänsm<wbr>ütze
+		</div>
+	</body>
 </html>

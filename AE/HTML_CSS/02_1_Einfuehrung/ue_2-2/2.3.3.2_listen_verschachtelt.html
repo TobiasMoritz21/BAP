@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-  <title>Verschachtelte Listen</title>
-</head>
-<body>
-  <!-- Achten Sie darauf, Elemente in HTML korrekt zu verschachteln.
-       In diesem Beispiel wird eine untergeordnete Liste innerhalb
-	   eines Listenelements geöffnet und geschlossen.
-	   Es können sowohl geordnete als auch ungeordnete Listen verschachtelt werden.
-	-->
-  <>
-    <>Telefonate f&uuml;hren</>
-    <>E-Mails beantworten
-      <>
-        <>Jan</>
-        <>Simon</>
-      </>
-    </>
-    <>Projekt 1</>
-    <>Plan morgen</>
-  </>
-</body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Verschachtelte Listen</title>
+	</head>
+	<body>
+	  <!-- Achten Sie darauf, Elemente in HTML korrekt zu verschachteln.
+		   In diesem Beispiel wird eine untergeordnete Liste innerhalb
+		   eines Listenelements geöffnet und geschlossen.
+		   Es können sowohl geordnete als auch ungeordnete Listen verschachtelt werden.
+		-->
+		<ol>
+			<li>Telefonate f&uuml;hren</li>
+			<li>E-Mails beantworten
+			<ul>
+				<li>Jan</li>
+				<li>Simon</li>
+			</ul>
+			</li>
+			<li>Projekt 1<li/>
+			<li>Plan morgen</li>
+		</ol>
+	</body>
 </html>
