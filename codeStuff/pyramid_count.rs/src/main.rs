@@ -1,3 +1,4 @@
+#![allow(unused)]
 //! Pyramiden Zähler
 
 #[derive(Debug, Clone, PartialEq)]
@@ -5,19 +6,19 @@ struct Pyramide {
 	ebenen: Vec<Ebene>,
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 enum BaseShape {
     Quadrat,    
     Dreieck,    // Gleichseitig
 }
 
 impl Pyramide {
-    fn new(ebenen_zahl: usize) -> Self {
+    fn new(ebenen_zahl: usize, form: BaseShape) -> Self {
     	let mut ebenen = Vec::new();
     	let mut current = ebenen_zahl;
     		
     	for _ in 0..ebenen_zahl {
-            ebenen.push(Ebene::new(current));
+            ebenen.push(Ebene::new(current, form));
         	current -= 1;
     	}
     
@@ -45,20 +46,21 @@ struct Ebene {
 }
 
 impl Ebene {
-    fn new(glaeser_pro_seite: usize) -> Self {
+    fn new(glaeser_pro_seite: usize, form: BaseShape) -> Self {
         Ebene {
     	    glaeser_pro_seite,
+            form,
 	}
     }
 
     fn glas_counter(&self) -> usize {
         match self.form {
-            Quadrat => {
-                let anzahl = self.glaeser_pro_seite.powi(2);
+            BaseShape::Quadrat => {
+                let anzahl = self.glaeser_pro_seite * self.glaeser_pro_seite;
                 return anzahl;
             },
-            Dreieck => {
-                let anzahl = (self.glaeser_pro_seite.powi(2) * 3.sqrt()) / 4;
+            BaseShape::Dreieck => {
+                let anzahl = (self.glaeser_pro_seite * self.glaeser_pro_seite * 3_usize.isqrt()) / 4;
                 return anzahl;
             },
         }
@@ -66,7 +68,7 @@ impl Ebene {
 }
 
 fn main() {
-    let pyramide = Pyramide::new(65);
+    let pyramide = Pyramide::new(65, BaseShape::Quadrat);
 
     let glaeser = pyramide.glas_counter();
     //let glaeser = glas_counter(pyramide);
